@@ -192,7 +192,7 @@ class IEEE754Value(BaseValue):
         return ieee754_double_to_bytes(self.value)
 
     def __str__(self):
-        return bytes_to_hexstr(self.value, start='0x', sep='')
+        return str(self.value)
 
 
 
