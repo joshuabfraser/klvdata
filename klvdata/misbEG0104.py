@@ -167,6 +167,17 @@ class SensorLatitude(IEEE754ElementParser):
     _range = (-90, 90)
     units = 'degrees'
 
+@UAVBasicUniversalMetadataSet.add_parser
+class SensorLatitudeSpec(IEEE754ElementParser):
+    key = hexstr_to_bytes("06 0E 2B 34 01 01 01 03 07 01 02 01 02 04 02 00")
+    TAG = 13
+    UDSKey = "06 0E 2B 34 01 01 01 03 07 01 02 01 02 04 02 00"
+    LDSName = "Sensor Latitude"
+    ESDName = "Sensor Latitude"
+    UDSName = "Device Latitude"
+    _domain = (-(2**31-1), 2**31-1)
+    _range = (-90, 90)
+    units = 'degrees'
 
 @UAVBasicUniversalMetadataSet.add_parser
 class SensorLatitude1(IEEE754ElementParser):
@@ -202,6 +213,18 @@ class SensorLongitude(IEEE754ElementParser):
     ESDName = "Sensor Longitude"
     UDSName = "Device Longitude"
     _domain = (-(2**63-1), 2**63-1)
+    _range = (-180, 180)
+    units = 'degrees'
+
+@UAVBasicUniversalMetadataSet.add_parser
+class SensorLongitudeSpec(IEEE754ElementParser):
+    key = hexstr_to_bytes("06 0E 2B 34 01 01 01 03 07 01 02 01 02 06 02 00")
+    TAG = 14
+    UDSKey = "06 0E 2B 34 01 01 01 03 07 01 02 01 02 06 02 00"
+    LDSName = "Sensor Longitude"
+    ESDName = "Sensor Longitude"
+    UDSName = "Device Longitude"
+    _domain = (-(2**31-1), 2**31-1)
     _range = (-180, 180)
     units = 'degrees'
 
